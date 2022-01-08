@@ -15,5 +15,5 @@ for packet in scapycapture:
             print()
             pass
         else:
-            print(",",end="")
+            print(", ",end="")
     x+=1
