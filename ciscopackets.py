@@ -6,6 +6,8 @@ from scapy.contrib.ospf import *
 if len(sys.argv) != 3:
     print("Usage: python3 ciscopackets.py inputfile outputfile")
     sys.exit(0)
+#Note: there are no more layers nor contrib files for Cisco protocols, a complete list of the protocols owned by Cisco is here: https://en.wikipedia.org/wiki/Category:Cisco_protocols
+#Many of them need to get implemented yet
 
 load_contrib("cdp")
 load_contrib("dtp")
