@@ -12,6 +12,7 @@ load_contrib("dtp")
 load_contrib("vtp")
 load_contrib("vqp")
 load_contrib("ospf")
+load_contrib("eigrp")
 
 pcap = rdpcap(sys.argv[1])
 outputfile=sys.argv[2]
@@ -31,6 +32,10 @@ for pkt in pcap:
     elif pkt.haslayer("VQP"):
         write(pkt)
     elif pkt.haslayer(OSPF_Hdr):
+        write(pkt)
+    elif pkt.haslayer("EIGRP"):
+        write(pkt)
+    elif pkt.haslayer(STP):
         write(pkt)
     else:
         pass
