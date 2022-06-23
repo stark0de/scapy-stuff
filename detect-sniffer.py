@@ -5,7 +5,7 @@ import os
 myinterface=sys.argv[1]
 time=sys.argv[2]
 
-myip = os.popen('ip addr show eth0').read().split("inet ")[1].split("/")[0]
+myip = os.popen('ip addr show '+myinterface).read().split("inet ")[1].split("/")[0]
 
 pkts=sniff(iface=myinterface,filter="udp port 53",timeout=time,store=1)
 
